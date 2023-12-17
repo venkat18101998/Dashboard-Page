@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+.patientBtn {
+    display: flex;
+    justify-content: flex-end;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media (max-width: 600px) {
+    .patientBtn {
+        display: none;
+    }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.patientBtn .today {
+    background-color: #eff2f7;
+    color: black;
+    border: 1px solid #eff2f7;
+}
+
+.patientBtn .weekly {
+    background-color: #bfc2c6;
+    color: #ffffff;
+    border: 1px solid #bfc2c6;
+}
+
+.patientBtn .monthly {
+    background-color: #eff2f7;
+    color: black;
+    border: 1px solid #eff2f7;
+}
+
+
+
+.outer-container {
+    background-color: #eff2f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+}
+
+.avatar-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+}
+
+.custom-tooltip {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.custom-tooltip p:first-child {
+    background-color: #bfc2c6;
+    padding: 5px;
+    border-radius: 4px 4px 0 0;
+    margin: 0;
+}
+
+.custom-tooltip hr {
+    border: 0;
+    border-top: 1px solid #f0f0f0;
+    margin: 5px 0;
+}
+
+
+.list {
+    width: 250px;
+}
+
+.fullList {
+    width: auto;
+}
+
+
+.grow {
+    flex-grow: 1;
+}
+
+.menuButton {
+    margin-right: 16px;
+}
+
+.title {
+    display: none;
+}
+
+
+.icon-container {
+    display: flex;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.divitionName {
+    margin-right: 6vh;
+}
+
+.headerIcon {
+    color: #636e75;
+}
+
+.hiddenOnSmallScreen{
+    height: 490px; 
+    width: 260px;
+}
+
+@media (max-width: 600px) {
+    .hiddenOnSmallScreen {
+      height: auto;
+      width: auto;
+    }
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .iconDivition{
+    margin-right: 3vb;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}

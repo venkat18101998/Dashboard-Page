@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Sidebar from "./components/layout/Sidebar"
+import LoginContainer from './components/login/LoginContainer'
 
 function App() {
+
+  const [showLogin, setShowLogin] = useState(true);
+
+  useEffect(() => {
+    const formData = JSON.parse(localStorage.getItem('formData'));
+    if (formData && formData.email && formData.password) {
+      setShowLogin(false);
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      {showLogin ? (
+        <LoginContainer />
+      ) : (
+        <Sidebar />
+      )}
+    </React.Fragment>
   );
 }
 
