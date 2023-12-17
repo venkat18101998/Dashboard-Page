@@ -3,12 +3,13 @@ import { Button, Checkbox, Container, FormControlLabel, Grid, TextField, Typogra
 
 
 const LoginForm = () => {
-
     const [formData, setFormData] = useState({
         email: '',
         password: '',
         rememberMe: false,
     });
+
+    const isFormValid = formData.email && formData.password && formData.rememberMe;
 
     const handleInputChange = (e) => {
         const { name, value, checked, type } = e.target;
@@ -28,7 +29,6 @@ const LoginForm = () => {
         localStorage.setItem('formData', JSON.stringify(formData));
         window.location.href = '/Dashboard';
     };
-
 
     return (
         <React.Fragment>
@@ -75,6 +75,7 @@ const LoginForm = () => {
                                 variant="contained"
                                 color="primary"
                                 type="submit"
+                                disabled={!isFormValid}
                             >
                                 Submit
                             </Button>
@@ -83,7 +84,8 @@ const LoginForm = () => {
                 </form>
             </Container>
         </React.Fragment>
-    )
-}
+    );
+};
+
 
 export default LoginForm
